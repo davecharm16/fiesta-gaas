@@ -1,0 +1,7 @@
+1. **P1 — [NewOrder.tsx](/Users/davecharm.bulaquena/Documents/personal/fiesta-gas/app/src/pages/dispatcher/NewOrder.tsx:96):** The quantity input declares `max={5}`, but its change handler only enforces a minimum. A dispatcher can enter more than five units and create an order for that quantity, allowing an invalid order through the demo.
+
+2. **P1 — [Ops.tsx](/Users/davecharm.bulaquena/Documents/personal/fiesta-gas/app/src/pages/owner/Ops.tsx:44):** Stock-in quantity is not clamped to a positive whole number. Entering a negative value and recording stock-in reduces full stock and can increase empty stock, corrupting the inventory figures shown to the owner.
+
+3. **P2 — [Customer.tsx](/Users/davecharm.bulaquena/Documents/personal/fiesta-gas/app/src/pages/customer/Customer.tsx:23):** Switching the demo customer does not update the selected cylinder size, which is initialized only once from the original customer. If a customer with a different usual size is selected, the order form can show the wrong size and price.
+
+4. **P2 — [Rider.tsx](/Users/davecharm.bulaquena/Documents/personal/fiesta-gas/app/src/pages/rider/Rider.tsx:87):** The delivery screen says GPS location is captured automatically, but when location access is unavailable or times out, confirmation silently records the customer’s saved pin instead. The owner reviewing proof sees a location presented as captured GPS when it may only be the stored address pin.

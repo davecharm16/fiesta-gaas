@@ -1,0 +1,5 @@
+
+# brownfield adoption scratch (delete after synthesis)
+knowledge/_intake/
+.playwright-mcp/
+.claude/

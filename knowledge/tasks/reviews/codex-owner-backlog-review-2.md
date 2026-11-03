@@ -1,0 +1,11 @@
+1. **P1 — [src/lib/store.ts](/Users/davecharm.bulaquena/Documents/personal/fiesta-gas/app/src/lib/store.ts:90)** — `placeOrder` does not validate quantity or the calculated amount in the store. Calling it with a negative or fractional quantity can create an invalid order; delivery then uses that quantity in stock arithmetic without checking it. A rider could record a delivery that increases depot stock or changes money totals incorrectly.
+
+2. **P1 — [src/lib/store.ts](/Users/davecharm.bulaquena/Documents/personal/fiesta-gas/app/src/lib/store.ts:111)** — `cancel` accepts any order status. Cancelling an already delivered order removes it from delivered-order and remittance calculations while leaving its stock movement and collected cash intact. An owner can end up with missing sales and cash totals for a delivery that already happened.
+
+3. **P2 — [src/lib/store.ts](/Users/davecharm.bulaquena/Documents/personal/fiesta-gas/app/src/lib/store.ts:12)** — `normalize` fills in absent arrays and holdings, but does not validate that persisted records have the fields the screens use, such as an order’s `placedAt`, customer, or remittance snapshot. Malformed or partially upgraded localStorage data can still produce broken calculations or screens instead of triggering the documented seed fallback.
+
+4. **P2 — [src/pages/owner/Engage.tsx](/Users/davecharm.bulaquena/Documents/personal/fiesta-gas/app/src/pages/owner/Engage.tsx:41)** — The callback date input allows today, but its value is always converted to 9:00 AM. After 9:00 AM, choosing today fails the store’s future-timestamp check, so the owner cannot log a callback for later today.
+
+5. **P2 — `15-owner-followups-snoozed.png`** — The customer and order details in the follow-up table are clipped at the right edge of the phone viewport, including the call outcome and snooze controls. An owner using a phone may not be able to reach those follow-up actions.
+
+6. **P2 — `11-owner-inventory.png`** — The inventory table is wider than the visible phone-sized area; physical-count, reason, threshold, and status columns extend off-screen. An owner using a phone can miss stock warnings or be unable to record a count without horizontal scrolling.

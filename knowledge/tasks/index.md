@@ -1,0 +1,20 @@
+# Tasks — Index
+
+Task plans and their outcomes live here (`todo.md`-style), so progress and decisions survive across sessions.
+One file per task/feature: `knowledge/tasks/YYYY-MM-DD-<short-slug>.md`.
+
+## Shape of a task plan
+
+1. **Goal** — what "done" means, in one or two sentences.
+2. **Plan** — checkable items (`- [ ]`), marked complete as you go.
+3. **Verification** — how you'll prove it works (tests, browser flow, logs) — not just "it compiles."
+4. **Outcome / Review** — appended when the work lands: what actually shipped, what changed vs. the plan, and any
+   follow-ups. This is what the knowledge base reads later, so don't skip it.
+
+Per `CLAUDE.md`: at plan time, also break user-facing capabilities into story files under the relevant
+`knowledge/product_docs/domain-features/<domain>-feature-brief/stories/` folder, and keep the domain-features
+registry row current.
+
+## Tasks
+- [2026-10-30 web prototype](2026-10-30-web-prototype.md) — PWA client demo
+- [2026-10-31 shadcn UI rebuild](2026-10-31-shadcn-ui-rebuild.md): Codex-planned UI redo on shadcn/ui

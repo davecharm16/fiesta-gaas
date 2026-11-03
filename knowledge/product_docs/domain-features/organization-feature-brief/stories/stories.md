@@ -1,0 +1,7 @@
+- As the owner I register a new branch (name, town, address, map pin) and it is immediately usable for stock, riders and customers.
+- As the owner I create a custom role with chosen permissions and assign staff to it.
+- As the owner I add a user, give a role and the branches they may work in.
+- As a branch dispatcher I only see and assign orders and riders of my branch.
+- As the owner I switch between All branches and one branch on every report.
+- As a manager I move stock between branches with a recorded transfer.
+- As anyone, an action outside my permission or branch is refused with a clear message.
